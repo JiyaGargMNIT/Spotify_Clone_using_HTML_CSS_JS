@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spotify - Web Player: Music for everyone</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="utility.css">
+      <link rel="icon" href="assets/" type="image/x-icon">
+</head>
+<body>
+    <div class="container flex">
+
+ <div class="left border" >
+    <div class="home  bg-gray rounded m-1 p-1">
+        <div class="logo p-1"><img class="invert" src="assets/logo.svg" alt="logo"></div>
+        <ul>
+            <li><img src="assets/home.svg" class="invert" alt="home">Home</li>
+            <li><img src="assets/search.svg"class="invert" alt="search">Search</li>
+        </ul>
+    </div>
+    <div class="library bg-gray rounded m-1 p-1">
+        <div class="heading"><div class="flex justify-center" style="gap:10px"><img src="assets/playlist.svg" class="invert" width="20px" alt=""> Your library</div> <img src="assets/plus.svg" class="invert" width="20px"></div>
+        <div class="songList m-1 p-1">
+            <ul>
+                          </ul>
+        </div>
+        <div class="footer bg-gray  ">
+            <div><a href="#">Legal</a></div>
+            <div><a href="#">Safety & Privacy Center</a></div>
+            <div><a href="#">Privacy policy</a></div>
+            <div><a href="#">Cookies</a></div>
+            <div><a href="#">About Us</a></div>
+            <div><a href="#">Accessibility</a></div>
+            <div><a href="#">Contact us</a></div>
+        </div>
+    
+    </div>
+
+
+ </div>
+ 
+       
+   <div class="right border bg-gray m-1 p-1 rounded" >
+        <div class="header ">
+            <div class="nav">
+                <img src="assets/leftarrow.svg" alt="Go back" class="invert" width="40px">
+                <img src="assets/rightarrow.svg" alt="Go back" class="invert" width="25px">
+
+            </div>
+            <div class="buttons">
+                <button class="signup-btn">Sign Up</button>
+                <button class="login-btn">Login</button>
+            </div>
+        </div>
+        <div class="spotifyPlaylists m-1 ">
+            <h1>Spotify Playlists</h1>
+            <div class="cardContainer m-1 p-1">
+                <div class="card">
+                     <div class="play">
+                       
+                            <img src="assets/play.svg" alt="" width="25px" >
+                       
+                    </div>
+                  
+                    <img src="assets/card1.jpg" width="200px">
+                    <h2>Happy Hits</h2>
+                    <p>Hits to boost your mood and fill you with happiness</p>
+                </div>
+                <div class="card">
+                    <div class="play">
+                       
+                            <img src="assets/play.svg" alt="" width="25px" >
+                       
+                    </div>
+                    <img src="assets/card1.jpg" width="200px">
+                    <h2>Happy Hits</h2>
+                    <p>Hits to boost your mood and fill you with happiness</p>
+                </div>
+            </div>
+            <div class="playbar">
+                <div class="seekbar">
+                    <div class="circle"></div>
+                </div>
+                <div class="songInfo"></div>
+                <div class="songButtons flex justify-center items-center">
+                    <img src="assets/previous.svg" width="25px" alt="" id="previous">
+                    <img src="assets/playsong.svg"  width="25px" alt="" class="invert" id="play">
+                    <img src="assets/next.svg" width="25px" alt="" id="next">
+                </div>
+                <div class="songTime"></div>
+
+            </div>
+        </div>
+
+   </div>
+    </div>
+  
+
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
