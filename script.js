@@ -18,20 +18,36 @@ async function getSongs(){
     return songs;
 }
 
-const playMusic=(track) => {
+const playMusic=(track,songName,pause=false) => {
     currentSong.src="songs/"+track;
-    currentSong.play();
+
+    if(!pause){
+            currentSong.play();
+    }
+    document.querySelector(".songInfo").innerHTML=songName;
+    document.querySelector(".songTime").innerHTML="0:00/0:00"
 }
 
 
+const secondsIntoMinutes=(seconds) => {
+  let minutes=Math.floor(seconds/60);
+  let second=Math.floor(seconds%60);
+  if(second<10){
+    return `${minutes}:0${second}`;
+  }
+  return `${minutes}:${second}`;
+}
 
 
 async function main(){
 
   
     let songs=await getSongs();
+currentSong.src=songs[0];
+  playMusic(songs[0].split("/songs/")[1],songs[0].split("/songs/")[1].split(".mp3")[0].replaceAll("_"," ").split("-")[0],true);
 
-    console.log(songs);
+  
+  console.log(songs);
     let songUL=document.querySelector(".songList").getElementsByTagName("ul")[0];
     for (const song of songs) {
         songUL.innerHTML=songUL.innerHTML+`  <li>
@@ -62,12 +78,26 @@ async function main(){
             element.addEventListener("click",() => {
                 play.src="assets/pause.svg"
                 console.log(address);
-                playMusic(address);
+                playMusic(address,divs[0].innerHTML);
 
             }
             )
     });
 
+  currentSong.addEventListener("timeupdate",() => {
+    console.log(currentSong.currentTime);
+    console.log(currentSong.duration);
+    
+    document.querySelector(".songTime").innerHTML=`${secondsIntoMinutes(currentSong.currentTime)}/${secondsIntoMinutes(currentSong.duration)}`;
+    document.querySelector(".circle").style.left=(currentSong.currentTime/currentSong.duration)*100+"%";
+
+}) 
+
+    document.querySelector(".seekbar").addEventListener("click",(e) => {
+        let percent=(e.offsetX/e.target.getBoundingClientRect().width)*100;
+         document.querySelector(".circle").style.left=percent+"%";
+         currentSong.currentTime=percent/100*currentSong.duration;
+    });
    
 } 
 main();
