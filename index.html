@@ -13,12 +13,17 @@
 
  <div class="left border" >
     <div class="home  bg-gray rounded m-1 p-1">
-        <div class="logo p-1"><img class="invert" src="assets/logo.svg" alt="logo" width="100px"></div>
+        <div class="logo p-1">
+            <img class="invert" src="assets/logo.svg" alt="logo" width="100px">
+            <div class="close">
+                <img src="assets/close.svg" alt="" class="invert" width="30px">
+            </div></div>
         <ul>
             <li><img src="assets/home.svg" class="invert" alt="home">Home</li>
             <li><img src="assets/search.svg"class="invert" alt="search">Search</li>
         </ul>
     </div>
+        
     <div class="library bg-gray rounded m-1 p-1">
         <div class="heading"><div class="flex justify-center" style="gap:10px"><img src="assets/playlist.svg" class="invert" width="20px" alt=""> Your library</div> <img src="assets/plus.svg" class="invert" width="20px"></div>
         <div class="songList m-1 p-1">
@@ -44,6 +49,9 @@
    <div class="right border bg-gray m-1 p-1 rounded" >
         <div class="header ">
             <div class="nav">
+                <div class="hamburger">
+                    <img src="assets/hamburger.svg" alt="" class="invert" width="30px">
+                </div>
                 <img src="assets/leftarrow.svg" alt="Go back" class="invert" width="40px">
                 <img src="assets/rightarrow.svg" alt="Go back" class="invert" width="25px">
 
@@ -90,7 +98,17 @@
                     <img src="assets/playsong.svg"  width="25px" alt="" class="invert" id="play">
                     <img src="assets/next.svg" width="25px" alt="" id="next">
                 </div>
+                <div class="wrapper flex justify-center items-center">
+                        
                 <div class="songTime"></div>
+                <div class="volume flex justify-center items-center">
+                            <img src="assets/volume.svg" alt=""  width="30px">
+                            <div class="range">
+                                <input type="range" name="volume">
+                            </div>
+                        </div>
+                </div>
+                
 
             </div>
         </div>
