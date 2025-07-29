@@ -138,6 +138,7 @@ body{
 }
 .card:hover{
     background-color:#454545;
+    cursor:pointer;
 }
 
 .signup-btn{
@@ -291,8 +292,15 @@ body{
         z-index: 1;
         width:300px;
         background-color: black;
-        height:100vh;
+        height:99vh;
     }
+    .library{
+    height:75vh;
+    position: relative;
+    .songList{
+        height:55vh;
+    }
+}
     .right{
         width:93vw;
         height:92vh;
@@ -317,20 +325,15 @@ body{
        
      
     }
-    .card{
-        width:70vw;
-        margin:0px;
-      
-    }
-
-    .songInfo{
+    
+  .songInfo{
         font-size: 16px;
         font-weight: normal;
     }
 
     .cardContainer{
         
-        height:65vh;
+        max-height:65vh;
         }
 }
 
@@ -344,5 +347,10 @@ body{
     .wrapper{
         flex-direction: column;
         gap:3px;
+    }
+    .card{
+        width:40vw;
+        margin-left:20%;
+      
     }
 }
