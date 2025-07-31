@@ -53,6 +53,39 @@ async function getSongs(folder){
             )
     });
 
+
+     let previous=document.getElementById("previous");
+   previous.addEventListener("click",() => {
+     let index=songs.indexOf(currentSong.src);
+  
+    
+     if(index-1>=0){
+       if(currentSong.paused){
+      playMusic(songs[index-1].split(`/${currFolder}/`)[1],songs[index-1].split(`/${currFolder}/`)[1].split(".mp3")[0].replaceAll("_"," ").split("-")[0],true);
+     }
+        else{
+          playMusic(songs[index-1].split(`/${currFolder}/`)[1],songs[index-1].split(`/${currFolder}/`)[1].split(".mp3")[0].replaceAll("_"," ").split("-")[0]);
+        }
+     }
+     
+   }
+   )
+
+   let next=document.getElementById("next");
+   next.addEventListener("click",() => {
+     let index=songs.indexOf(currentSong.src);
+  
+     
+     if(index+1<songs.length){
+      if(currentSong.paused){
+       playMusic(songs[index+1].split(`/${currFolder}/`)[1],songs[index+1].split(`/${currFolder}/`)[1].split(".mp3")[0].replaceAll("_"," ").split("-")[0],true);
+     }
+       else{
+         playMusic(songs[index+1].split(`/${currFolder}/`)[1],songs[index+1].split(`/${currFolder}/`)[1].split(".mp3")[0].replaceAll("_"," ").split("-")[0]);
+       }
+     }
+   }
+   )
     return songs;
 
 }
@@ -167,38 +200,7 @@ async function main(){
     
     )
 
-   let previous=document.getElementById("previous");
-   previous.addEventListener("click",() => {
-     let index=songs.indexOf(currentSong.src);
   
-    
-     if(index-1>=0){
-       if(currentSong.paused){
-      playMusic(songs[index-1].split(`/${currFolder}/`)[1],songs[index-1].split(`/${currFolder}/`)[1].split(".mp3")[0].replaceAll("_"," ").split("-")[0],true);
-     }
-        else{
-          playMusic(songs[index-1].split(`/${currFolder}/`)[1],songs[index-1].split(`/${currFolder}/`)[1].split(".mp3")[0].replaceAll("_"," ").split("-")[0]);
-        }
-     }
-     
-   }
-   )
-
-   let next=document.getElementById("next");
-   next.addEventListener("click",() => {
-     let index=songs.indexOf(currentSong.src);
-  
-     
-     if(index+1<songs.length){
-      if(currentSong.paused){
-       playMusic(songs[index+1].split(`/${currFolder}/`)[1],songs[index+1].split(`/${currFolder}/`)[1].split(".mp3")[0].replaceAll("_"," ").split("-")[0],true);
-     }
-       else{
-         playMusic(songs[index+1].split(`/${currFolder}/`)[1],songs[index+1].split(`/${currFolder}/`)[1].split(".mp3")[0].replaceAll("_"," ").split("-")[0]);
-       }
-     }
-   }
-   )
 
    document.querySelector(".range").getElementsByTagName("input")[0].addEventListener("change",(e) => {
      
