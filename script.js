@@ -21,8 +21,7 @@ async function getSongs(folder){
         }
     }
    
-    currentSong.src=songs[0];
-  
+    
 
   
  
@@ -120,7 +119,11 @@ async function displayAlbums() {
 async function main(){
 
   await displayAlbums();
-    await getSongs(currFolder);
+    let songs=await getSongs(currFolder);
+    let defaultSong=songs[0]
+    console.log(defaultSong)
+    console.log(defaultSong.split(`${currFolder}/`)[1]);
+    playMusic(`${defaultSong.split(`${currFolder}`)[1]}`,defaultSong.split(`${currFolder}/`)[1].split("-")[0].replaceAll("_"," "),true);
      let play=document.getElementById("play");
     play.addEventListener("click",()=>{
         if(currentSong.paused){
